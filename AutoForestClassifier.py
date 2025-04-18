@@ -95,8 +95,9 @@ class AutoencoderClassifier:
 
         concat_data = tf.concat([loss, latent], axis=1)
         scores = self.predictor(concat_data, training=False)
-        predictions = tf.cast(scores >= threshold, tf.int32)
-        return predictions.numpy()
+        predictions = np.array('MBM' if scores >= threshold else 'Not MBM')
+            
+        return predictions
 
     def ensemble_prediction(self, input_data, use_ensemble=True, method='average', weights=None, selected_model='residual_skip'):
         selected_model_obj = {
@@ -142,7 +143,7 @@ class AutoencoderClassifier:
                     return tf.reduce_sum(outputs * weights_tensor, axis=0)
                 else:
                     raise ValueError(f"Unknown ensemble method: {method}")
-
+                
             return selected_model_obj.predict(input_data, verbose=0)
 
     def auto_forest_pipeline(self, data, use_ensemble=True, method='average', weights=None, selected_model='residual_skip'):
