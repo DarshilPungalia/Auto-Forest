@@ -7,3 +7,4 @@
 - Complete Guide on Deep Learning Architectures Part 2: Autoencoders: https://merveenoyan.medium.com/complete-guide-on-deep-learning-architectures-part-2-autoencoders-293351bbe027
 - Denoising AutoEncoders: https://medium.com/game-of-bits/denoising-autoencoders-can-reduce-noise-in-images-5b74753eaf97
 - Autoencoders in Python with Tensorflow/Keras: https://www.youtube.com/watch?v=JoR5HCs0n0s
+- Dataset: https://github.com/pungaliadarshil/NN_miniProject_Dataset
